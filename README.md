@@ -33,6 +33,12 @@ ZhuaTech CONSTRUCTION 是知华科技推出的工程项目协同系统社区源�
 
 后端还提供运营风险评估接口，结合积压、延期、关键事项、容量利用率与数据完整度给出分级结果和行动建议。该结果仅用于软件学习演示，不替代企业正式风控与业务决策。
 
+## 新增：工程进度款支付门禁
+
+进度款评估结合合同金额、申报金额、已计量产值、已批准变更、保留金比例、资料完整度和安全停付状态，计算本期可支付金额及差异，并输出 `APPROVE / REVIEW / BLOCK` 决策与可解释原因，帮助工程与成本团队在付款前完成一致性检查。
+
+接口：`POST /api/admin/progress-payment`。
+
 ## 技术结构
 
 ```text
@@ -101,4 +107,3 @@ curl -u admin:admin123 -H 'Content-Type: application/json' \
 本仓库不包含真实业务数据、真实生产接口凭据或生产配置。请勿提交个人隐私与业务敏感信息、访问令牌、私钥或真实业务数据。安全问题请按 [SECURITY.md](SECURITY.md) 私下报告；参与开发前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 关键词：知华科技 CONSTRUCTION、工程项目系统、施工运营管理、工程协同平台、Java 工程系统、Spring Boot CONSTRUCTION、Vue 企业管理系统、上海软件定制开发。
-

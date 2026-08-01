@@ -37,4 +37,14 @@ class ConstructionApiIntegrationTests {
     @Test void anonymousRequestIsRejected() throws Exception {
         mvc.perform(get("/api/workspace/tasks")).andExpect(status().isUnauthorized());
     }
+
+    @Test void adminCanEvaluateProgressPayment() throws Exception {
+        mvc.perform(post("/api/admin/progress-payment").with(httpBasic("admin", "admin123"))
+            .contentType(MediaType.APPLICATION_JSON)
+            .content("{\"contractAmount\":1000000,\"claimedAmount\":350000,\"measuredAmount\":300000,\"approvedChangeAmount\":20000,\"retentionRate\":5,\"documentsComplete\":true,\"safetyHold\":false}"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.data.eligibleAmount").value(304000.0))
+            .andExpect(jsonPath("$.data.variance").value(46000.0))
+            .andExpect(jsonPath("$.data.decision").value("REVIEW"));
+    }
 }
