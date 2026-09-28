@@ -2,6 +2,8 @@
 
 # ZhuaTech CONSTRUCTION · 知华工程项目协同平台
 
+[简体中文](README.md) | [English](README.en.md)
+
 面向项目进度、现场安全、材料与质量的前后端分离社区源码项目
 
 [官网](https://www.zhuatech.cn/) · [功能地图](#功能地图) · [快速启动](#快速启动) · [使用许可](#使用许可) · [定制咨询](#定制咨询)
